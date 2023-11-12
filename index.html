@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dropdown</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <section class="hero">
+        <div class="menu-svg">
+            
+            <i class="fas fa-bars"></i>
+            
+        </div>
+      <div class="side-bar">
+        <div class="close-svg">
+            
+            <h1>Mankind<span>4Dev</span></h1>
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="menu">
+          <div class="item">
+            <a href="#"><i class="fas fa-desktop"></i>Home</a>
+          </div>
+          <div class="item">
+            <a class="sub-btn"><i class="fas fa-desktop"></i>Tutorials<i class="fas fa-angle-right dropdown"></i
+            ></a>
+            <div class="sub-menu">
+                <a href="#" class="sub-item">Front-End</a>
+                <a href="#" class="sub-item">Back-End</a>
+                <a href="#" class="sub-item">Data Analytics</a>
+                <a href="#" class="sub-item">Back-End</a>
+                <a href="#" class="sub-item">Artificial Intelligence</a>
+                <a href="#" class="sub-item">Git</a>
+            </div>
+          </div>
+          <div class="item">
+            <a class="sub-btn"
+              ><i class="fas fa-table"></i>Languages
+              <i class="fas fa-angle-right dropdown"></i
+            ></a>
+            <div class="sub-menu">
+              <a href="#" class="sub-item">HTML</a>
+              <a href="#" class="sub-item">CSS</a>
+              <a href="#" class="sub-item">Javascript</a>
+              <a href="#" class="sub-item">Typescript</a>
+              <a href="#" class="sub-item">Python</a>
+              <a href="#" class="sub-item">PHP</a>
+              <a href="#" class="sub-item">JQuery</a>
+              <a href="#" class="sub-item">SQL</a>
+              <a href="#" class="sub-item">DevOpt</a>
+            </div>
+          </div>
+          <div class="item">
+            <a class="sub-menu"><i class="fas fa-th"></i>Forms</a>
+          </div>
+          <div class="item">
+            <a class="sub-btn"
+              ><i class="fas fa-cogs"></i>Frameworks
+              <i class="fas fa-angle-right dropdown"></i
+            ></a>
+            <div class="sub-menu">
+              <a href="#" class="sub-item">Reactjs</a>
+              <a href="#" class="sub-item">React Native</a>
+              <a href="#" class="sub-item">Vue.js</a>
+              <a href="#" class="sub-item">Angular.js</a>
+              <a href="#" class="sub-item">Next.js</a>
+              <a href="#" class="sub-item">Axios.js</a>
+              <a href="#" class="sub-item">Radux.js</a>
+              
+            </div>
+            <div class="item">
+                <a class="sub-btn"><i class="fas fa-desktop"></i>MERN<i class="fas fa-angle-right dropdown"></i
+                ></a>
+                <div class="sub-menu">
+                    <a href="#" class="sub-item">MongoDB.js</a>
+                    <a href="#" class="sub-item">Express.js.js</a>
+                    <a href="#" class="sub-item">Reactjs</a>
+                    <a href="#" class="sub-item">Node.js</a>
+                  </div>
+              </div>
+          </div>
+          <div class="item">
+            <a href="#"><i class="fas fa-info-circle"></i>About</a>
+          </div>
+        </div>
+        <div class="logout menu">
+        <a href="#"
+          >Logout<i class="fa-solid fa-arrow-right-from-bracket out"></i></a>
+      </div>
+      </div>   
+    </section>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".sub-btn").click(function () {
+          $(this).next(".sub-menu").slideToggle();
+          $(this).find('.dropdown').toggleClass('rotate');
+        });
+
+        $('.menu-svg').click(function(){
+            $('.side-bar').addClass('active');
+            $('.menu-svg').css('visibility', 'hidden');
+        });
+
+        $('.close-svg').click(function(){
+            $('.side-bar').removeClass('active');
+            $('.menu-svg').css('visibility', 'visible');
+        });
+
+        $(document).mouseup(function (e) {
+        var sidebar = $('.side-bar');
+
+        // If the clicked element is not the sidebar or a descendant of the sidebar
+        if (!sidebar.is(e.target) && sidebar.has(e.target).length === 0) {
+            // Hide the sidebar and make the menu icon visible
+            sidebar.removeClass('active');
+            $('.menu-svg').css('visibility', 'visible');
+        }
+    });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background: url(./bg-14.jpg)no-repeat;
+    background-size: cover;
+    background-position: center
+}
+
+.hero{
+    position: relative;
+    display: block;
+    justify-content: space-between;
+
+}
+
+.side-bar{
+    background: rgb(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    width: 300px;
+    height: 100vh;
+    position: relative;
+    top: 0;
+    left: -100%;
+    overflow-y: auto;
+    transition: 0.6s ease;
+    transition-property: left;
+}
+
+.side-bar.active{
+    left: 0;
+}
+
+.side-bar .menu{
+    width: 100%;
+    margin-top: 40px;
+}
+
+.side-bar .menu .item{
+    position: relative;
+    cursor: pointer;
+    
+}
+
+.side-bar .menu .item a{
+    color: #333;
+    font-size: 17px;
+    text-decoration: none;
+    display: block;
+    padding: 5px 30px;
+    line-height: 60px;
+    border-bottom: 1px solid rgb(160, 137, 6);
+
+}
+
+.side-bar .menu .item a:hover{
+    background:rgb(235, 226, 177);
+    transition: 0.3s ease;
+}
+
+.side-bar .menu .item i{
+    margin-right: 15px;
+    
+}
+
+.side-bar .menu .item a .dropdown{
+    
+    position: absolute;
+    right: 0;
+    margin: 20px;
+    transition: 0.3s ease;
+}
+
+.side-bar .menu .item .sub-menu{
+    background: rgb(160, 137, 6);
+    display: none;
+}
+
+.side-bar .menu .item .sub-menu a{
+    padding-left: 80px;
+}
+
+.logout{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logout a{
+    width: 290px;
+    color: #333;
+    background:rgb(160, 137, 6);
+    font-size: 17px;
+    line-height: 60px;
+    padding: 5px 30px; 
+    margin-top: 2rem;
+    text-decoration: none;
+}
+
+.logout i{
+    color: red;
+    margin-left: 1.5rem;
+}
+
+.rotate{
+    transform: rotate(90deg);
+}
+
+.close-svg{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.close-svg i{
+    position: relative;
+    color: rgb(92, 58, 58);
+    font-size: 25px;
+    margin: 15px ;
+    right: 0;
+    cursor: pointer;
+}
+
+.close-svg i:hover{
+    color: rgb(223, 99, 99);
+}
+.close-svg i:active{
+    color: red;
+}
+
+.close-svg h1{
+    font-size: 2rem;
+    margin: 5px ;
+    cursor: pointer;
+}
+
+.close-svg span{
+    color: rgb(160, 137, 6);
+}
+
+
+
+.menu-svg{
+   position: absolute;
+   color: #fff;
+   font-size: 30px;
+   margin: 25px;
+   cursor: pointer; 
+}
